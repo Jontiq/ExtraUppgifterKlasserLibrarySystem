@@ -24,7 +24,7 @@ namespace ExtraUppgifterKlasser
         }
 
         //Methods
-
+        //Allowes the user to borrow book
         public void Borrow()
         {
             if (IsBorrowed == false)
@@ -35,6 +35,20 @@ namespace ExtraUppgifterKlasser
             else
             {
                 Console.WriteLine($"Sorry, \"{Title}\" is already borrowed.");
+            }
+        }
+
+        //Allowes user to return rented book.
+        public void ReturnBook()
+        {
+            if (IsBorrowed == true)
+            {
+                IsBorrowed = false;
+                Console.WriteLine($"\"{Title}\" has been returned.");
+            }
+            else
+            {
+                Console.WriteLine($"Unable to return \"{Title}\", book has not been borrowed.");
             }
         }
     }
